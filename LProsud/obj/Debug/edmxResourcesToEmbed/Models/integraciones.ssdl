@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="IntegracionesModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="DTE_recibido_SII">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="dte" Type="int" />
+    <Property Name="tipo_transaccion" Type="varchar" MaxLength="150" />
+    <Property Name="rut" Type="varchar" MaxLength="15" />
+    <Property Name="razon_social" Type="varchar" MaxLength="100" />
+    <Property Name="folio" Type="varchar" MaxLength="20" />
+    <Property Name="fecha" Type="varchar" MaxLength="20" />
+    <Property Name="fecha_recepcion" Type="varchar" MaxLength="20" />
+    <Property Name="fecha_acuse" Type="varchar" MaxLength="20" />
+    <Property Name="exento" Type="varchar" MaxLength="20" />
+    <Property Name="neto" Type="varchar" MaxLength="20" />
+    <Property Name="iva" Type="varchar" MaxLength="20" />
+    <Property Name="iva_no_recuperable_monto" Type="varchar" MaxLength="20" />
+    <Property Name="iva_no_recuperable_codigo" Type="varchar" MaxLength="15" />
+    <Property Name="total" Type="varchar" MaxLength="20" />
+    <Property Name="monto_activo_fijo" Type="varchar" MaxLength="20" />
+    <Property Name="monto_iva_activo_fijo" Type="varchar" MaxLength="20" />
+    <Property Name="iva_uso_comun" Type="varchar" MaxLength="20" />
+    <Property Name="impuesto_sin_credito" Type="varchar" MaxLength="20" />
+    <Property Name="iva_no_retenido" Type="varchar" MaxLength="20" />
+    <Property Name="impuesto_puros" Type="varchar" MaxLength="20" />
+    <Property Name="impuesto_cigarrillos" Type="varchar" MaxLength="20" />
+    <Property Name="impuesto_tabaco_elaborado" Type="varchar" MaxLength="20" />
+    <Property Name="emisor_nc_nd_fc" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <Function Name="SP_RecibeJson_SII" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="json" Type="nvarchar(max)" Mode="In" />
+  </Function>
+  <EntityContainer Name="IntegracionesModelStoreContainer">
+    <EntitySet Name="DTE_recibido_SII" EntityType="Self.DTE_recibido_SII" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

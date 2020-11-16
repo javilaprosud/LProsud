@@ -1,0 +1,3041 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D6695AC3-FE67-44E5-B7E9-2868405D0F32}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>LProsud</RootNamespace>
+    <AssemblyName>LProsud</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44337</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EPPlus, Version=5.1.0.0, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL">
+      <HintPath>..\packages\EPPlus.5.1.0\lib\net45\EPPlus.dll</HintPath>
+    </Reference>
+    <Reference Include="ExcelDataReader, Version=3.6.0.0, Culture=neutral, PublicKeyToken=93517dbe6a4012fa, processorArchitecture=MSIL">
+      <HintPath>..\packages\ExcelDataReader.3.6.0\lib\net45\ExcelDataReader.dll</HintPath>
+    </Reference>
+    <Reference Include="LinqToExcel, Version=1.11.0.0, Culture=neutral, PublicKeyToken=9c8ea65a58f03f1f, processorArchitecture=MSIL">
+      <HintPath>..\packages\LinqToExcel.1.11.0\lib\LinqToExcel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data">
+      <HintPath>..\..\..\Documents\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="Remotion, Version=1.13.52.2, Culture=neutral, PublicKeyToken=0669cf0452175907, processorArchitecture=MSIL">
+      <HintPath>..\packages\LinqToExcel.1.11.0\lib\Remotion.dll</HintPath>
+    </Reference>
+    <Reference Include="Remotion.Data.Linq, Version=1.13.52.2, Culture=neutral, PublicKeyToken=0669cf0452175907, processorArchitecture=MSIL">
+      <HintPath>..\packages\LinqToExcel.1.11.0\lib\Remotion.Data.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="Remotion.Interfaces, Version=1.13.52.2, Culture=neutral, PublicKeyToken=0669cf0452175907, processorArchitecture=MSIL">
+      <HintPath>..\packages\LinqToExcel.1.11.0\lib\Remotion.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="RestSharp, Version=106.11.7.0, Culture=neutral, PublicKeyToken=598062e77f915f75, processorArchitecture=MSIL">
+      <HintPath>..\packages\RestSharp.106.11.7\lib\net452\RestSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Threading.Tasks" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Gif\load.gif" />
+    <Content Include="Imagen\logo-PS.png" />
+    <Content Include="Imagen\okicon.png" />
+    <Content Include="Imagen\xicon.png" />
+    <Content Include="Models\Conexionbd.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Conexionbd.Context.cs</LastGenOutput>
+      <DependentUpon>Conexionbd.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\Conexionbd.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Conexionbd.edmx</DependentUpon>
+      <LastGenOutput>Conexionbd.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\integraciones.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>integraciones.edmx</DependentUpon>
+      <LastGenOutput>integraciones.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\integraciones.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>integraciones.edmx</DependentUpon>
+      <LastGenOutput>integraciones.cs</LastGenOutput>
+    </Content>
+    <Content Include="Styles\StyleSheet1.css" />
+    <Content Include="Styles\Boostrap.css" />
+    <Content Include="Vista\ActualizacionOP.aspx" />
+    <Content Include="Vista\AsignacionMetas.aspx" />
+    <Content Include="Vista\CargaMetas.aspx" />
+    <Content Include="Vista\CierreMetas.aspx" />
+    <Content Include="Vista\ComparativoCierre.aspx" />
+    <Content Include="Vista\CrearUsuarios.aspx" />
+    <Content Include="Vista\EnvioOP.aspx" />
+    <Content Include="Vista\Home.aspx" />
+    <Content Include="Vista\MantenedorUsuario.aspx" />
+    <Content Include="Vista\PaletizadosVidaUtil.aspx" />
+    <Content Include="Vista\ProductosNE.aspx" />
+    <Content Include="Vista\FacturacionMasiva.aspx" />
+    <Content Include="Vista\FacturacionM.aspx" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="API\APIJson.cs" />
+    <Compile Include="conexion\Conexion.cs" />
+    <Compile Include="Controlador\HomeController.cs" />
+    <Compile Include="Modelo\CargaMetas.cs" />
+    <Compile Include="Modelo\Items.cs" />
+    <Compile Include="Modelo\Pedido.cs" />
+    <Compile Include="Models\Accesorio.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AccesoriosORTR.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AccesosDirecto.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ACC_Documentos.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\acc_monitor_log.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ACC_OtrosDoctos.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ActFijoValore.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ActFijoValores20161130.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ActFijoValores20161229.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ActFijoValores20181018.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ActivosFijo.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ActivosFijos20161130.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ActivosFijosUltimo.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ACTIVOS_FIJOS.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ACTIVOS_FIJOS_SOLO.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AdicComaLin.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Adicione.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AdicRecDe.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AjustesStockLote.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Ajuste_lotes_detalle.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Alarma.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Almacene.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AlmSuc.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AnalisisCosto.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AnalisisCostoOriginal.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ANALISIS_COSTO_MEZCLADA_1_SEMESTRE_2008.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ANALISIS_COSTO_MEZCLADA_2_SEMESTRE_2008.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\analista_saldados.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AnexoRut.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AnexoRut_Dest.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Anotacione.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AntecedentesOT.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ANTECEDENTES_PERSONALES.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AperturaCaja.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AporRetTPago.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AporteRetiro.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ArchivosAdjunto.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Area.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ArmadoKit.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ArmadoKitProd.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Articulo.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Aseguradora.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AsiHabSemanaCorrida.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AsocDoctsCompra.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AsoEmpresa.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AtributosAdicionale.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AtributosEtapa.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AUDIT_LOG_DATA.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AUDIT_LOG_TRANSACTIONS.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AUDIT_UNDO.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BeetrackLoad.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BoleAdic.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BoleCuota.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BoleImpto.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BoleLinea.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BolePago.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BoleRecDe.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BoleSesione.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Boleta.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\borrar.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CamposRepImp.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CapturaPC.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CapturaPerfect.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CargasFamiliare.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CargasFamiliaresCCHC.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CARGAS_FAMILIARES.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Cargo.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CarpetaComex.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CartolasBancaria.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CatalogoTabla.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CategoriasCuenta.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CategoriasProd.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CausFiniq.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CENCOSUD_COMPRAS_VENTAS_EMPRESA_8.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CENCOSUD_ENTRADAS_Y_SALIDAS_EMPRESA_8.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CENCOSUD_ORDENES_DE_COMPRA_Y_OTROS_EMP8.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CENCOSUD_STOCK_EMPRESA_8.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CENCOSUD_STOCK_EMPRESA_8_CON_LOTES.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CenTBoleta.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CenTDocumento.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CentMovStock.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CenTPago.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Centralizacion.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CentralizaMovstock.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CentroCostoLinea.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CFAWhere.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Cheque.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CierreCaja.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CierreTPago.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Ciudade.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ClasificacionesCuenta.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\clasificacion_Clientes.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Clientes_y_sucursales.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CocoLinea.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CocoSeguimiento.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CodigosCliente.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CodigosGenerale.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CodoAsociado.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CodoImpuesto.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CodoLinea.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CodResult.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CodResult20181018.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ColaImpre.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ColasPOS.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Colore.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ComaLinea.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ComaLineasImpresa.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ComaMovimiento.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Comanda.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\COMERCIAL_DOCUMENTOS_COMPRAS_VENTAS.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\COMERCIAL_ORDENES_DE_COMPRA_Y_OTROS.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\COMERCIAL_STOCK_CON_LOTES.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ComiEmpleado.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CompActivo.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CompActivos20181018.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CompCont.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CompIELinea.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CompIngEgre.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CompLinea.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CompMovimiento.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Comprobante.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Comuna.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Concepto.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ConceptoGastosComex.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ConceptosCentralizacion.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ConceptosCosto.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CONCEPTOSREMUNERACIONE.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Conceptos_Comex.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ConcSevi.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Conexionbd.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Conexionbd.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Conexionbd.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Conexionbd.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Conexionbd.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ConexionesSistema.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ConfigCierreAno.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ConfigGeneral.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ConfigPos.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Configuracion.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\confImpreFiscal.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Cono.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ContaDocto.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ContCom.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Contrato.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Copropietario.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CorreoHR.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CorreosEnvio.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CostoFinanciero.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CostosCurso.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CtaActivo.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CtaCont.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CUADRATURA_REMUNERACIONES.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CuentaProve.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CurAsistente.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CurImpartido.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CurNota.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Curso.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\C_LakeSide_PFD_objects080027106E5F.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\C_LakeSide_PFD_OrigText080027106E5F.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\C_LakeSide_PFD_Profiled080027106E5F.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DatosLogistico.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DatosLogisticosProducto.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DatosPaletizacion.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DEL_DOCUMENTOS_COMPRAS_VENTAS_sub01_V1.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DEL_OP_PENDIENTE_OPERATIVA.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DEL_VISTA_COBRANZA.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Dependencia.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Depto.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Det1Comex.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Det2Comex.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Det3Comex.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DetalleASL.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DetallesComision.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Detalle_movimiento.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Detalle_movimiento_solicitado.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DETALLE_PERMISOS.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DETALLE_VACACIONES.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DETALLE_VACACIONES_RESUMEN.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DETALLE_VACACIONES_RESUMEN_WEB.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DetLicencia.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DetPedido.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DetPermiso.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DetPersona.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DetPrestamo.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DetVacacione.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DetVacaciones20181111.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DetVoucher.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DiasImpCurso.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DiasVenta.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DocActivo.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DocAdic.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DocAdicional.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DocCuota.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DocDatosComex.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DocEstado.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DocImpto.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DocLinea.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DocLineasExt.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DocMovimiento.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DocPago.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DocPagosContab.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DocRecDe.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DocSery.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DoctImpresion.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DoctoPacEnc.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DoctoPacLinea.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DoctosAsoc.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Documento.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DocumentosOT.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DocumentosProcesado.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Documentos_AnalisisCosto.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DOCUMENTOS_ANALISIS_COSTO.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DOCUMENTOS_ANALISIS_COSTO2.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DOCUMENTOS_COMPRAS_HISTORICO_EMPRESA_3.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DOCUMENTOS_COMPRAS_VENTAS.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DOCUMENTOS_COMPRAS_VENTAS_16.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DOCUMENTOS_COMPRAS_VENTAS_18.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DOCUMENTOS_COMPRAS_VENTAS_2011.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DOCUMENTOS_COMPRAS_VENTAS_2012.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DOCUMENTOS_COMPRAS_VENTAS_2014_2015.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DOCUMENTOS_COMPRAS_VENTAS_analistaHistorico.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DOCUMENTOS_COMPRAS_VENTAS_ANO_2005_EMPRESA_1.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DOCUMENTOS_COMPRAS_VENTAS_ANO_2005_EMPRESA_3.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DOCUMENTOS_COMPRAS_VENTAS_ANO_2006_EMPRESA_1.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DOCUMENTOS_COMPRAS_VENTAS_ANO_2006_EMPRESA_3.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DOCUMENTOS_COMPRAS_VENTAS_ANO_2007_EMPRESA_1.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DOCUMENTOS_COMPRAS_VENTAS_ANO_2007_EMPRESA_1_3.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DOCUMENTOS_COMPRAS_VENTAS_ANO_2007_EMPRESA_3.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DOCUMENTOS_COMPRAS_VENTAS_ANO_2011_2012.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DOCUMENTOS_COMPRAS_VENTAS_BOLETA.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DOCUMENTOS_COMPRAS_VENTAS_DIEGO.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DOCUMENTOS_COMPRAS_VENTAS_EMPRESA_10_11_12.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DOCUMENTOS_COMPRAS_VENTAS_EMPRESA_10_11_12_16.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DOCUMENTOS_COMPRAS_VENTAS_EMPRESA_8.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DOCUMENTOS_COMPRAS_VENTAS_EMP_13.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DOCUMENTOS_COMPRAS_VENTAS_FELIPE.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DOCUMENTOS_COMPRAS_VENTAS_FELIPE_90DIAS.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DOCUMENTOS_COMPRAS_VENTAS_HISTORICO_EMPRESA_1.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DOCUMENTOS_COMPRAS_VENTAS_HISTORICO_EMPRESA_3.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DOCUMENTOS_COMPRAS_VENTAS_KAM01.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DOCUMENTOS_COMPRAS_VENTAS_KAM01_2010.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DOCUMENTOS_COMPRAS_VENTAS_KAM02.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DOCUMENTOS_COMPRAS_VENTAS_KAM03.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DOCUMENTOS_COMPRAS_VENTAS_KAM04.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DOCUMENTOS_COMPRAS_VENTAS_LIBRO.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DOCUMENTOS_COMPRAS_VENTAS_LIBRO_20151105.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DOCUMENTOS_COMPRAS_VENTAS_LIBRO_hist.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DOCUMENTOS_COMPRAS_VENTAS_LIBRO_OLD.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DOCUMENTOS_COMPRAS_VENTAS_LOTES.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DOCUMENTOS_COMPRAS_VENTAS_OTRAS_EMPRESAS.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DOCUMENTOS_COMPRAS_VENTAS_PRUEBA.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DOCUMENTOS_COMPRAS_VENTAS_PRUEBA_ANALISTA.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DOCUMENTOS_COMPRAS_VENTAS_SB.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DOCUMENTOS_COMPRAS_VENTAS_sub01.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DOCUMENTOS_COMPRAS_VENTAS_sub02.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DocVinculo.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DTE_recibido_SII.cs">
+      <DependentUpon>integraciones.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\dtproperty.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DWI_DOCUMENTOS.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Edificio.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EFTProduccion.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EmailsAlarma.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Empleado.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Empresa.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EncCpaVta.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EncPrestamo.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EnteLinea.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ENTRADAS_Y_SALIDAS.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ENTREGA_ROPA.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Envio.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EnvioTecnico.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EPLinea.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EquivaleDE.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EquivaleFpago.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EquivaleProducto.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EquivImpTiposSII.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EquivTiposDocto.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Estado.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EstadoPago.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EstadoPagosold.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Estado_Aprobacion.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Etapa.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EtapasFlujoDeTrabajo.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EvalAlterApli.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EvalEncApli.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EvalItemsApli.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\F29II.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\F29III.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\F29IV.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\F29V.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\FactCorrecion.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\FactorActualizacion.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\FechasAbastecimiento.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\FechasCompC.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\FECHAS_OP_FA_HR.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\FECHA_DOCUMENTOS_COMPRAS_VENTAS.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\FECHA_DOCUMENTOS_WMS.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\FiniLinea.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Finiquito.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Folio_Alerta.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\FormaPagoCliProv.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Formas_De_Pago_CliProv.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\FormatoProducto.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\FormatosER.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Formulario.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Funcion.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GaleriaCampos.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GaleriaPaquete.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GaleriaRelacione.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GaleriaTabla.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Garantia.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GaReLinea.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Gasto.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GastoComun.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GastoGlobal.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GastoMedicion.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GCAsignacione.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GCDetalle.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GeneProEcoTec.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GProLinea.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GraficosEnDemanda.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GrBoImpRango.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GrBoRango.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GrupoBoleta.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GruposAtributosEtapa.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GruposCuenta.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GruposCuenta1.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GruposEtapasFlujoDeTrabajo.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GruposProd.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GuiasRecepcion.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GureEnteTecnico.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GureLinea.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HabDesEmpleado.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HaberesDescuento.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HABERES_DESCUENTOS.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HABERES_DESCUENTOS_DIAS_TRABAJADOS.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HABERES_DESCUENTOS_TALANA.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HistorialLaboral.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HistoriaRelacCom.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Historico.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HistoricoConta.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HistoricoInmueble.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HistPago.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HistUltEstAnalisi.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HistUltEstAnalisis20161229.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HistUltEstAnalisis_2017_10_7_18_3_1.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HojasRuta.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HojasRutas_DEL.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Holding.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HORAS_EXTRAS.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HoRuLinea.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HoRuLineas_DEL.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HoRuPrecio.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HoRuPrecios_DEL.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\IMEGA_clientes_y_sucursales.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\IMEGA_COBRANZA_NVA.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\IMEGA_COMPRAS_VENTAS_EMP_10_11_12.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\IMEGA_ENTRADAS_Y_SALIDAS.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\IMEGA_FA_HOJA_RUTAS.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\IMEGA_HOJAS_RUTAS.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\IMEGA_LISTAS_DE_PRECIOS.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\IMEGA_LISTA_DE_PRECIOS_10_11.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\IMEGA_ORDENES_DE_COMPRA_Y_OTROS.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\IMEGA_ORDENES_DE_COMPRA_Y_OTROS2.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\IMEGA_ORDENES_DE_COMPRA_Y_OTROS_3.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\IMEGA_ORDENES_DE_COMPRA_Y_OTROS_COMPRAS.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\IMEGA_ORDENES_DE_COMPRA_Y_OTROS_COMPRAS_2012.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\IMEGA_ORDENES_DE_COMPRA_Y_OTROS_VW_2012.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\IMEGA_STOCK.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\IMEGA_STOCK_COMERCIAL.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\IMEGA_STOCK_LOGISTICO.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\IMEGA_STOCK_VENDEDORES.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\IMEGA_VISTA_CONTABILIDAD.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\IMEGA_VISTA_PRODUCTOS.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\IMEGA_VISTA_TRANSPORTES.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ImpreFiscalZ.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ImpreGpro.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Impresora.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ImpTasa.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ImpTipos.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ImpTiposSII.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Impuesto.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ImpuestoUnico.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\IndicadoresFinanciero.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\InicioRapido.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Inmueble.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\InmuFactoreAdic.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\InsFinEmp.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\InstFinanciera.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\InstPrevisional.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Instructore.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\InstruCurso.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\integraciones.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>integraciones.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\integraciones.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>integraciones.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\integraciones.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>integraciones.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\InvBalance.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Inventario.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\InvLinea.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\InvSery.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ItemFlujoEfectivo.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ItemsFER.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ItemsFERCtaCont.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ItemsPresupuesto.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\KARDEX.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Kit.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\KitBLinea.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\KitGarzone.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\KitLinea.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\KitProducto.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\LineaGrupo.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\LineaProd.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\LineasAlarma.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\LineasGRAE.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\LiquidacionesWeb.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\LISTAS_DE_PRECIOS.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\LISTA_DE_PRECIOS2.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ListP.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Locale.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Localizacione.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Lock.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\LogCierreMe.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\LoginEmpleado.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\LogStock.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Log_Desactiva_Producto.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Log_DocVinculo.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\LOG_ISV.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Log_Shopify.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MaestroComex.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MantencionesProducto.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MantencionesVehiculo.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MantencionModelo.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MarcarGuia.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MarcasOT.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MarcasProd.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Mecanico.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Medicione.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MeMoCampos.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MeMoTabla.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Mes.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Mesa.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\migration.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Minera.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MLPedidoEstado.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MLPedidoProcesado.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MLRecepcionProcesada.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MLStockProcesado.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ModelosProd.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ModificacionesFormulario.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MontoCargaFamiliar.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MontosMetasReponedore.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MotivosRechazo.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MovActivo.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MovActivos20161130.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MovActivos20181018.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MovimientoMensual.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MovimientoMensual20181111.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MovimientoMensualAPagar.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MovimientoMensual_20180115.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MovimientosCaBa.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MOVIMIENTOS_TORNIQUETE.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MOVIMIENTOS_TORNIQUETE_test.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MOVIMIENTO_ACTIVOS_FIJOS.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Movimiento_solicitado.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Movimiento_WMS.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Movimiento_WMS_FINAL.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MovLinea.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MovMenAsignacione.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MovMensualAPV.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MovMensualLinea.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MovOF.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MovsCuota.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MovsPago.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MovStock.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MultUMProducto.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Nav_Factura_Agenda.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\NM_VIEW_CRM_ATRIB_ADIC_RESERVAS.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\NM_VIEW_RESERVAS_SOPORTE.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\NoPermitido.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\NotaVta.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\novaConfigCuenta.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\NvLinea.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ObservacionesVisuale.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OC_Perfect.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OC_PerfectChoice.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ODAdic.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ODAgenda.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ODCosto.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ODdistribucion.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ODImpto.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ODLinea.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ODLineasExt.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OdocValDestino.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ODRecDe.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OFLinea.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\opcionesAplicacion.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OPMovimiento.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OPOperacione.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OPProductosInvolucrado.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OPResumenesOperacion.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OPTipoResumenOperacion.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OPTiposMovimiento.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OPTiposOperacion.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OP_PENDIENTE_OPERATIVA1.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OP_PENDIENTE_OPERATIVA2_2MESES.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OP_PENDIENTE_OPERATIVA_2016.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OP_PENDIENTE_OPERATIVA_2_old.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OP_Pendiente_Operativa_old.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OP_PENDIENTE_OPERATIVA_Revisar.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OrdenesDeTrabajo.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OrdenesFabricacion.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ORDENES_DESCRIPCION_EXTENDIDA.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ORDENES_DE_COMPRA_Y_OTROS.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ORDENES_DE_COMPRA_Y_OTROS_2012.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ORDENES_DE_COMPRA_Y_OTROS_2012_VISTA_WEB.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ORDENES_DE_COMPRA_Y_OTROS_2013.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ORDENES_DE_COMPRA_Y_OTROS_2014.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ORDENES_DE_COMPRA_Y_OTROS_ANALISTA.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ORDENES_DE_COMPRA_Y_OTROS_CALIDAD_SERVICIO_15D.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ORDENES_DE_COMPRA_Y_OTROS_COMPRAS.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ORDENES_DE_COMPRA_Y_OTROS_COMPRAS_2009.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ORDENES_DE_COMPRA_Y_OTROS_COMPRAS_2013.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ORDENES_DE_COMPRA_Y_OTROS_COMPRAS_ABASTECIMIENTO.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ORDENES_DE_COMPRA_Y_OTROS_COMPRAS_ABASTECIMIENTO_DP.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ORDENES_DE_COMPRA_Y_OTROS_COMPRAS_ABASTECIMIENTO_GD.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ORDENES_DE_COMPRA_Y_OTROS_COMPRAS_ABASTECIMIENTO_OC.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ORDENES_DE_COMPRA_Y_OTROS_COMPRAS_ABASTECIMIENTO_PF.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ORDENES_DE_COMPRA_Y_OTROS_COMPRAS_ABASTECIMIENTO_prueba2911.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ORDENES_DE_COMPRA_Y_OTROS_COMPRAS_COSTOS.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ORDENES_DE_COMPRA_Y_OTROS_COMPRAS_DISPLAY.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ORDENES_DE_COMPRA_Y_OTROS_COMPRAS_EMP8.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ORDENES_DE_COMPRA_Y_OTROS_COMPRAS_EMPRESA_13_ANALISTA.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ORDENES_DE_COMPRA_Y_OTROS_COMPRAS_EMP_13.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ORDENES_DE_COMPRA_Y_OTROS_COMPRAS_LINEA_GENERAL.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ORDENES_DE_COMPRA_Y_OTROS_COMPRAS_LOGISTICA.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ORDENES_DE_COMPRA_Y_OTROS_COMPRAS_LOGISTICA_PRUEBA.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ORDENES_DE_COMPRA_Y_OTROS_COMPRAS_MULA.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ORDENES_DE_COMPRA_Y_OTROS_COMPRAS_NOOCUPAR.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ORDENES_DE_COMPRA_Y_OTROS_COMPRAS_NOOCUPAR_1910216.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ORDENES_DE_COMPRA_Y_OTROS_COMPRAS_NOOCUPAR_HISTORIAL.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ORDENES_DE_COMPRA_Y_OTROS_COMPRAS_NOOCUPAR_RESPALDO.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ORDENES_DE_COMPRA_Y_OTROS_COMPRAS_NUEVO.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ORDENES_DE_COMPRA_Y_OTROS_COMPRAS_PRE_LIBRO.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ORDENES_DE_COMPRA_Y_OTROS_COMPRAS_PRE_LIBRO1.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ORDENES_DE_COMPRA_Y_OTROS_COMPRAS_RESPALDO.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ORDENES_DE_COMPRA_Y_OTROS_COMPRAS_VW_IMEGA.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ORDENES_DE_COMPRA_Y_OTROS_DGARCIA.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ORDENES_DE_COMPRA_Y_OTROS_EMPRESA_8.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ORDENES_DE_COMPRA_Y_OTROS_FELIPE.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ORDENES_DE_COMPRA_Y_OTROS_FELIPE_90DIAS.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ORDENES_DE_COMPRA_Y_OTROS_GLOBAL.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ORDENES_DE_COMPRA_Y_OTROS_HISTORIAL_PENDIENTES.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ORDENES_DE_COMPRA_Y_OTROS_HISTORIAL_PENDIENTES_16_11_2016.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ORDENES_DE_COMPRA_Y_OTROS_LOTES.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ORDENES_DE_COMPRA_Y_OTROS_MINIMA.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ORDENES_DE_COMPRA_Y_OTROS_NUEVOS.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ORDENES_DE_COMPRA_Y_OTROS_PRUEBA_2014.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ORDENES_DE_COMPRA_Y_OTROS_Respaldo_90102019.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ORDENES_DE_COMPRA_Y_OTROS_REVISION_ANALISTA.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OrdenPerfectChoice.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OrdenTrabajo.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Organica.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OrganicaEmpleado.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OrtrLinea.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OTDet.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OTDocumento.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OTEnc.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OTLinea.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OtrosDocto.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OVOP_DetalleOrdenPedido.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OVOP_OrdenPedido.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PackShopify.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PagosAnticipado.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Pai.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PantallaComex.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Paquete.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PaquetesExportacion.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ParametroReporte.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ParametrosFormulario.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ParametrosMensuale.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ParametrosSistema.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ParamVenc.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ParaUsuarioGrupo.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ParaUsuarioLinea.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Parrafo.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Pedido.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PerfOpcion.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PerfUsuario.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PerfVistasCampos.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Periodo.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PermisoEspecial.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PermisoEspecial_Usrs.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Persona.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Personas_copy.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PlantEvalAlter.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PlantEvalEnc.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PlantEvalItem.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PlantillasCompCont.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Plaza.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PlccLinea.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PMPProductoMoneda.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PoGaLinea.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Precios_Productos_y_Kits.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PrecioUltProd.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PrerreqCurso.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PresentacionProd.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PresLinea.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Presupuesto.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PresupuestosST.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PRESUPUESTO_COMPRAS_VENTAS.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ProAsigTarea.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ProAtribCel.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ProdActivo.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ProdAlmacen.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ProdAlmacenExt.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ProdAlmacenProyeccion.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ProdAlmacenProyeccionLote.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ProdAlterna.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ProdBarra.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ProdEquivalencia.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ProdExtConcepto.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ProdExtendido.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ProdExtTitPagina.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ProdImpto.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ProdKitUnion.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ProDocto.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ProDocumento.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ProdPresupuesto.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ProdRelacCom.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Producto.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ProductoVidaUtil.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ProdVida.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PropHistorial.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Propina.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ProProyecCosto.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Propuesta.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ProyeccionesGasto.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ProyeccionStock.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Proyecto.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PrstLinea.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PtosIPC.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PtosVenta.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Query.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RC_INFORMATICA.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RecDesc.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RegEvenRelControl.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Regione.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RegistroCapacitacion.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\REGISTRO_CAPACITACIONES.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RegRelControl.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RelacAtribEtapa.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RelacCom.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RelacComCobranza.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RelacCom_copia.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RelInmueble.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Reliquidacione.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\REMUNERACIONE.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\REMUNERACIONES_PRUEBA.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Reporte.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ReportesImpresora.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\repoTipoInput.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RepoTipoParametro.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ReservaMesa.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Result.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RolesOT.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RtaDetalle.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Ruta.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SaldosMensuale.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Sectore.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SectoresGarzone.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SeguimientoCobranza.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Seguro.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SemaforoFilter.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SemanaCorrida.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SeriesAlmacen.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ServiciosTecnicosExterno.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SERVICIO_TECNICO.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Shopify.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Shopify_Prueba.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sisLogistico_seguimiento.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Sistema.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SM_Before.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\StkILinea.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\StkILineasMULTI.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Stock.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\StockInicial.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Stock_1.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Stock_analista.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\STOCK_CON_LOTES.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\STOCK_CON_LOTES_FELIPE.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\STOCK_CON_LOTES_PROYECCION.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\STOCK_CON_LOTES_WMS.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Stock_Dos.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\STOCK_EMPRESA_8_CON_LOTES.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\STOCK_EMP_13.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\STOCK_EMP_EXTERNAS.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Stock_general.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Stock_lin_BEBES.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\STOCK_LOGISTICO.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\stock_lot_vutil.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\stock_vu_con_lotesWeb.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sub_clasificacion_Clientes.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SucCom.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SucCom_2.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Sucursale.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Supervisa.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sysdiagram.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SysUnionFAGDvta.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TablaConsulta.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TablasComision.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TablaSql.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TablasVersion.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TABLA_ORDENES_DE_COMPRA_Y_OTROS.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TamanoTabla.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TareasOT.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Tarjeta.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TarjetasEmp.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TasaCotización.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Tbl_AuditoriaUso.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TEMP.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\test_desarrolloInveValAgrupStockLotes.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TiCamAduana.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TipMoneda.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tipoAntecedentesVisuale.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TipoPersona.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TiposActivoFijo.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TiposAtributo.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TiposCheque.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TiposConversion.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TiposDescuento.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TiposDocto.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TiposFlujoDeTrabajo.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TiposGlosa.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TiposPago.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TiposPerf.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TiposPresupuesto.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tipoUM.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tipoVehiculo.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tmpAnalisisRUTCUENTA.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TOP_KITCHEN_GC_SC.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TOP_KITCHEN_ORDENES_DE_COMPRA_Y_OTROS.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TOP_KITCHEN_STOCK.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TOP_KITCHEN_STOCK_SC.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Torre.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TpDocum.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TrabajosImpresion.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TramosCargasFamiliare.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TramosCCHCargasFamiliare.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TramosSueldo.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Traspaso.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TraspLinea.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Traza.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TrazaMenu.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TrazaVistaGeneral.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Turno.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TurnosEmpleado.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TVidaUtil.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\t_actualizacion_vista.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\T_COMERCIAL_STOCK_CON_LOTES.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\T_OP_PENDIENTES.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\T_STOCK_CON_LOTES.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\t_usuario_vista.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\T_Ventas.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\UMProducto.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\UnidadCliente.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\UNILEVER_FLUJO.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\UniMed.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\UnionMesa.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\User.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Users_old.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\User_Launcher.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\usuarios_web.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Vale.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ValMoneda.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ValMulAtributoDocumento.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ValoresAtributoAdicional.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ValoresAtributoDocumento.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ValorizacionesProducto.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ValorizacionesProductos_PASO.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ValorizacionesRealizada.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ValorKit.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ValorProd.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VehiBeetrack.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Vehiculo.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VehiculosMarca.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VehiculosModelo.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Vehiculos_copy.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\versiones_ejecutadas.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VidaUtil.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\View_DocvinculoDestino.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VIEW_emp_cargos_ccostos.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VistaTrazaCalculada.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VISTA_ABASTECIMIENTO.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VISTA_ABASTECIMIENTO_NUEVA.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VISTA_ATRIBUTOS_ADICIONALES.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VISTA_CASINO_CCOSTO2.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VISTA_CHOFERES.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\vista_cobranzanueva.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VISTA_COBRANZA_2.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\vista_cobranza_proveedores.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VISTA_CONCEPTOS_DEVOLUCIONES.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VISTA_CONTABILIDAD.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VISTA_CONTABILIDAD_EMP_13.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VISTA_CONTABILIDAD_RRHH.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VISTA_CONTRATOS.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VISTA_DATOS_LOGISTICOS.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VISTA_DATOS_LOGISTICOS_2.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VISTA_DETALLE_TRASPASOS.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VISTA_FA_HOJA_RUTAS.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VISTA_FA_HOJA_RUTAS_AGRUPADO.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VISTA_FA_HOJA_RUTAS_AGRUPADO_OLD.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VISTA_HOJAS_RUTAS.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VISTA_HOJAS_RUTAS_20160824.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VISTA_HOJAS_RUTAS_HORA.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VISTA_HOJAS_RUTAS_n.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VISTA_HOJAS_RUTAS_n_20160824.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VISTA_HOJAS_RUTAS_n_OLD_08022017.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VISTA_HOJAS_RUTAS_old.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VISTA_HOJAS_RUTAS_OLD_08022017.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VISTA_HOJAS_RUTAS_SIN_FACTURAS.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Vista_Log_Web.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VISTA_METAS.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VISTA_PERSONAL_WEB.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VISTA_PMP_FUTURO.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VISTA_PRELIBRO_COMPRA.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VISTA_PRODUCTIVIDAD.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VISTA_PRODUCTOS.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VISTA_PRODUCTOS_DUN_EAN.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Vista_ProductoWeb.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VISTA_RELOJ_ASISTENCIA.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VISTA_RELOJ_ASISTENCIA_TURNOS.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VISTA_RELOJ_ASISTENCIA_TURNOS_2.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VISTA_RELOJ_CONTROL.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VISTA_RELOJ_CONTROL_20180117.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VISTA_RUTAS_AGRUPADO.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VISTA_RUTAS_AGRUPADO_CIUDAD.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VISTA_TRANSPORTES.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VM_PRECIOOPWEB.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VW_Agendamientos.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VW_ARCHITEQ_FERIADOS.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VW_ARCHITEQ_PERSONAS.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VW_ARCHITEQ_PERSONAS_DIF.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VW_ARCHITEQ_TURNOS.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\vw_asistencia_sc.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VW_Asistencia_SupplyChain.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VW_BANCO_BICE.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VW_BOLETAS.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VW_BOLETAS_PERFECTCHOICE.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VW_Clientes_Bloq.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VW_CostoLinea.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VW_DESCUENTOS.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VW_DOCTO_PENDIENTES.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VW_GUIAS_COMPRA.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VW_GUIAS_IMPORTANCION.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VW_HABERES.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VW_JERARQUIZACION.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VW_KilosLinea.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VW_KPI2.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\vw_metas_vistaGC_paso1.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VW_MLSTOCK.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VW_ML_Pedidos.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VW_OCXAGENDA.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\vw_OD_DOCT.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VW_Op_Asociadas_Guia.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VW_OP_PENDIENTES_24.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VW_OtrosDoctos_OdAgenda.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VW_PRODUCTOPRECIOSPWEB.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VW_PRUEBA_ROL.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VW_SaldoVacaciones.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VW_TALANA_CargasFamiliares.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VW_Talana_Empleados.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VW_TALANA_HABERES.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VW_TALANA_HaberesYDescuentosHistorico.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VW_TALANA_Vacaciones.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VW_TRANSPORTES_CHOFERES.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\vw_UnidMedProd_valores.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VW_Vinculadas.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VW_WEB_LIQUIDACIONES.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\V_COMERCIAL_STOCK_CON_LOTES.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\V_DOCUMENTOS_COMPRAS_VENTAS_JL.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\v_empleados_registra.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Walmart_plu.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\WEB_Clientes.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\web_dys_lts_mensual.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\WEB_STOCK.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\WEB_VENTAS.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\WEB_VENTAS_HISTORICO.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\WEB_Vista.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Zona.cs">
+      <DependentUpon>Conexionbd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Vista\ActualizacionOP.aspx.cs">
+      <DependentUpon>ActualizacionOP.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\ActualizacionOP.aspx.designer.cs">
+      <DependentUpon>ActualizacionOP.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\AsignacionMetas.aspx.cs">
+      <DependentUpon>AsignacionMetas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\AsignacionMetas.aspx.designer.cs">
+      <DependentUpon>AsignacionMetas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\CargaMetas.aspx.cs">
+      <DependentUpon>CargaMetas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\CargaMetas.aspx.designer.cs">
+      <DependentUpon>CargaMetas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\CierreMetas.aspx.cs">
+      <DependentUpon>CierreMetas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\CierreMetas.aspx.designer.cs">
+      <DependentUpon>CierreMetas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\ComparativoCierre.aspx.cs">
+      <DependentUpon>ComparativoCierre.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\ComparativoCierre.aspx.designer.cs">
+      <DependentUpon>ComparativoCierre.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\CrearUsuarios.aspx.cs">
+      <DependentUpon>CrearUsuarios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\CrearUsuarios.aspx.designer.cs">
+      <DependentUpon>CrearUsuarios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\EnvioOP.aspx.cs">
+      <DependentUpon>EnvioOP.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\EnvioOP.aspx.designer.cs">
+      <DependentUpon>EnvioOP.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Home.aspx.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\Home.aspx.designer.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\MantenedorUsuario.aspx.cs">
+      <DependentUpon>MantenedorUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\MantenedorUsuario.aspx.designer.cs">
+      <DependentUpon>MantenedorUsuario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\NavBar.Master.cs">
+      <DependentUpon>NavBar.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\NavBar.Master.designer.cs">
+      <DependentUpon>NavBar.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\PaletizadosVidaUtil.aspx.cs">
+      <DependentUpon>PaletizadosVidaUtil.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\PaletizadosVidaUtil.aspx.designer.cs">
+      <DependentUpon>PaletizadosVidaUtil.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\ProductosNE.aspx.cs">
+      <DependentUpon>ProductosNE.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\ProductosNE.aspx.designer.cs">
+      <DependentUpon>ProductosNE.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\FacturacionMasiva.aspx.cs">
+      <DependentUpon>FacturacionMasiva.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\FacturacionMasiva.aspx.designer.cs">
+      <DependentUpon>FacturacionMasiva.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\FacturacionM.aspx.cs">
+      <DependentUpon>FacturacionM.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\FacturacionM.aspx.designer.cs">
+      <DependentUpon>FacturacionM.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="Models\Conexionbd.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Conexionbd.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\Conexionbd.edmx.diagram">
+      <DependentUpon>Conexionbd.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\integraciones.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>integraciones.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\integraciones.edmx.diagram">
+      <DependentUpon>integraciones.edmx</DependentUpon>
+    </Content>
+    <None Include="packages.config" />
+    <Content Include="Vista\NavBar.Master" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>8</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Excel">
+      <Guid>{00020813-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>9</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>49571</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44337/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Este proyecto hace referencia a los paquetes NuGet que faltan en este equipo. Use la restauración de paquetes NuGet para descargarlos. Para obtener más información, consulte http://go.microsoft.com/fwlink/?LinkID=322105. El archivo que falta es {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

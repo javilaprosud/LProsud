@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="IntegracionesModelStoreContainer" CdmEntityContainer="IntegracionesEntities">
+    <EntitySetMapping Name="DTE_recibido_SII">
+      <EntityTypeMapping TypeName="IntegracionesModel.DTE_recibido_SII">
+        <MappingFragment StoreEntitySet="DTE_recibido_SII">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="dte" ColumnName="dte" />
+          <ScalarProperty Name="tipo_transaccion" ColumnName="tipo_transaccion" />
+          <ScalarProperty Name="rut" ColumnName="rut" />
+          <ScalarProperty Name="razon_social" ColumnName="razon_social" />
+          <ScalarProperty Name="folio" ColumnName="folio" />
+          <ScalarProperty Name="fecha" ColumnName="fecha" />
+          <ScalarProperty Name="fecha_recepcion" ColumnName="fecha_recepcion" />
+          <ScalarProperty Name="fecha_acuse" ColumnName="fecha_acuse" />
+          <ScalarProperty Name="exento" ColumnName="exento" />
+          <ScalarProperty Name="neto" ColumnName="neto" />
+          <ScalarProperty Name="iva" ColumnName="iva" />
+          <ScalarProperty Name="iva_no_recuperable_monto" ColumnName="iva_no_recuperable_monto" />
+          <ScalarProperty Name="iva_no_recuperable_codigo" ColumnName="iva_no_recuperable_codigo" />
+          <ScalarProperty Name="total" ColumnName="total" />
+          <ScalarProperty Name="monto_activo_fijo" ColumnName="monto_activo_fijo" />
+          <ScalarProperty Name="monto_iva_activo_fijo" ColumnName="monto_iva_activo_fijo" />
+          <ScalarProperty Name="iva_uso_comun" ColumnName="iva_uso_comun" />
+          <ScalarProperty Name="impuesto_sin_credito" ColumnName="impuesto_sin_credito" />
+          <ScalarProperty Name="iva_no_retenido" ColumnName="iva_no_retenido" />
+          <ScalarProperty Name="impuesto_puros" ColumnName="impuesto_puros" />
+          <ScalarProperty Name="impuesto_cigarrillos" ColumnName="impuesto_cigarrillos" />
+          <ScalarProperty Name="impuesto_tabaco_elaborado" ColumnName="impuesto_tabaco_elaborado" />
+          <ScalarProperty Name="emisor_nc_nd_fc" ColumnName="emisor_nc_nd_fc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="SP_RecibeJson_SII" FunctionName="IntegracionesModel.Store.SP_RecibeJson_SII" />
+  </EntityContainerMapping>
+</Mapping>
