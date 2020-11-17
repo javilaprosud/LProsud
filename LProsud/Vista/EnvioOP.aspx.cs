@@ -3,6 +3,7 @@ using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.Security;
@@ -14,9 +15,10 @@ namespace LProsud.Vista
     public partial class EnvioOP : System.Web.UI.Page
     {
         static Pedido ped = new Pedido();
+        public string usu;
         protected void Page_Load(object sender, EventArgs e)
         {
-            string usu;
+            
             if (!IsPostBack)
             {
                 if (Session["user"] == null)
@@ -25,8 +27,15 @@ namespace LProsud.Vista
                 }
                 else
                 {
-                    usu = Session["user"].ToString();
                     System.Web.HttpContext.Current.Session["user2"] = usu;
+                    if (Session["user"].ToString() == "")
+                    {
+                        usu = Session["user2"].ToString();
+                    }
+                    else
+                    {
+                        usu = Session["user"].ToString();
+                    }
                 }
 
                 if (Session["sessionBool"] == null || Session["sessionBool"].ToString() == "0")
@@ -36,7 +45,12 @@ namespace LProsud.Vista
                 }
             }
         }
-
+        public void logEnvioOP(string User_Log, string Descripcion_Log, string OP, string posicionesTotales)
+        {
+            conexion.Conexion conn = new conexion.Conexion();
+            SqlCommand cmd = conn.logEnvioOP(User_Log, Descripcion_Log, OP, posicionesTotales);
+            //DataTable dt = new DataTable();
+        }
         public void cargarGrid()
         {
             DataTable dt2 = new DataTable();
@@ -243,8 +257,18 @@ namespace LProsud.Vista
 
         protected void EnvioPedido(object sender, EventArgs e)
         {
+            string usu2;
+            if (Session["user"].ToString() == "")
+            {
+                usu2 = Session["user2"].ToString();
+            }
+            else
+            {
+                usu2 = Session["user"].ToString();
+            }
             try
             {
+
                 int i = 0;
                 foreach (GridViewRow item in GridItems.Rows)
                 {
@@ -275,12 +299,14 @@ namespace LProsud.Vista
                 }
 
                 ClientScript.RegisterStartupScript(this.GetType(), "Popup", "$('#ModelDetalle').modal('show')", true);
+                logEnvioOP(usu2, ret, ped.Documento, ped.TotalPosiciones);
             }
             catch (Exception ex)
             {
                 img.ImageUrl = "~/Imagen/xicon.png";
                 LblRespuesta.Text = ex.ToString();
                 ClientScript.RegisterStartupScript(this.GetType(), "Popup", "$('#ModelDetalle').modal('show')", true);
+                logEnvioOP(usu2, ex.ToString(), ped.Documento, ped.TotalPosiciones);
             }
         }
 

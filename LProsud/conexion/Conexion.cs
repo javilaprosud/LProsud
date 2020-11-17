@@ -218,6 +218,30 @@ namespace LProsud.conexion
 
         }
 
+        public string SP_LogEnvioOP()
+        {
+            string query_SP;
+            query_SP = "sp_EnvioOP_Log";
+            return query_SP;
+        }
+
+        public SqlCommand logEnvioOP(string User_Log, string Descripcion_Log, string OP, string posicionesTotales)
+        {
+            using (procesadorabd())
+            {
+                SqlCommand cmd = new SqlCommand(SP_LogEnvioOP(), procesadorabd());
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("@User_Log", SqlDbType.VarChar).Value = User_Log;
+                cmd.Parameters.Add("@Descripcion_Log", SqlDbType.VarChar).Value = Descripcion_Log;
+                cmd.Parameters.Add("@OP", SqlDbType.VarChar).Value = OP;
+                cmd.Parameters.Add("@posicionesTotales", SqlDbType.VarChar).Value = posicionesTotales;
+                cmd.ExecuteNonQuery();
+                return cmd;
+            }
+
+        }
+
+
         public SqlCommand LogProcesarDTEPrueba(string user, string log, int folio, string rut, int tipo)
         {
             using (procesadorabdPrueba())
